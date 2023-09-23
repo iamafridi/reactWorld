@@ -16,7 +16,7 @@ useEffect(()=>{
         <div>
             <h3>Countries : {countries.length}</h3>
       {
-        countries.map(country =><Country
+        countries.map(country =><Country key={country.cca3}
         country={country}></Country>)
       }
       
