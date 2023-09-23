@@ -17,7 +17,12 @@ useEffect(()=>{
 
 //visited Country 
 const handleVisitedCountry = country =>{
-    console.log(country);
+    // console.log(country);
+    const newVisitedCountries = [...visitedCountries,country];
+setVisitedCountries(newVisitedCountries);
+
+// amra push korte parbo na tai sprad operator dite kaj korte hobe
+
 }
 
 
@@ -25,8 +30,11 @@ const handleVisitedCountry = country =>{
         <div>
             <h3>Countries : {countries.length}</h3>
 <div>
-    <h4>Visited Countries</h4>
+    <h4>Visited Countries :{visitedCountries.length}</h4>
     <ul>
+        {
+            visitedCountries.map(country => <li key={country.cca3}>{country.name.common}</li> )
+        }
 
     </ul>
 </div>

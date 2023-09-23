@@ -19,7 +19,7 @@ const handleVisited =() =>{
             <p>Population : {population}</p>
             <p>Area : {area}</p>
             <p><small>Code : {cca3}</small></p>
-            <button>Mark Visited</button>
+            <button onClick={()=>handleVisitedCountry(country)}>Mark Visited</button>
             <br />
             <button onClick={handleVisited}>{visited ? 'Visited' : 'Going' }</button>
             {visited ? ' I have visited this Country.' : ' I Want To Visit'}
