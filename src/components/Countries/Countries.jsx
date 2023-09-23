@@ -7,6 +7,7 @@ import './Countries.css'
 const Countries = () => {
 
 const [countries, setCountries]=useState([]);
+const [visitedCountries, setVisitedCountries] = useState([])
 
 useEffect(()=>{
     fetch('https://restcountries.com/v3.1/all')
@@ -14,14 +15,29 @@ useEffect(()=>{
     .then(data => setCountries(data));
 },[])
 
+//visited Country 
+const handleVisitedCountry = country =>{
+    console.log(country);
+}
+
+
     return (
         <div>
             <h3>Countries : {countries.length}</h3>
+<div>
+    <h4>Visited Countries</h4>
+    <ul>
+
+    </ul>
+</div>
+
+
       <div className="country-container">
       {
         countries.map(country =><Country key={country.cca3}
-        country={country}></Country>)
+            handleVisitedCountry={handleVisitedCountry}        country={country}></Country>)
       }
+      {/* props hishabe amra function o pataite pari */}
       </div>
       
       
